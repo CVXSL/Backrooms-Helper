@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
-const update = ("Beta 1.0.7")
+const update = ("Beta 1.0.8")
 const updateInfo = ("• use /inbox for information")
 
 module.exports = {
