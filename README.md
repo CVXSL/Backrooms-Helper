@@ -2,7 +2,7 @@
 
 This is a Discord bot created for the game called "The Backrooms: Survival"!
 
-### Bot Info
+## Bot Info
 
 **Current Public Release**: `Not released publically!`
 
