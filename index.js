@@ -1,4 +1,4 @@
-const update = "Beta 1.0.5"
+const update = "Beta 1.0.6"
 //const client.shard.id = shard
 global.update = update;
 //const updateInfo = "• use /inbox for information"
