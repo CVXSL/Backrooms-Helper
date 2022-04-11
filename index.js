@@ -1,4 +1,4 @@
-const update = "1.0.13"
+const update = "1.0.14"
 //const update = process.env['UPDATE'];
 //const client.shard.id = shard
 global.update = update;
@@ -99,7 +99,7 @@ client.on("ready", () => {
     ` `,
     `In ${client.guilds.cache.size} Servers!`,
     `With ${client.users.cache.size} Users!`,
-    `${update}`
+    `Update ${update}`
 //    `SHARD: ${data.shardId}`
 ];
     
