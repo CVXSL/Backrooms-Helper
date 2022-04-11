@@ -1,4 +1,5 @@
-const update = "Beta 1.0.8"
+const update = "1.0.13"
+//const update = process.env['UPDATE'];
 //const client.shard.id = shard
 global.update = update;
 //const updateInfo = "• use /inbox for information"
@@ -90,6 +91,7 @@ client.on('interactionCreate', async interaction => {
 // THIS IS THE STATUS
 client.on("ready", () => {
 console.log(`Logged in as ${client.user.tag} :)\nUpdated to ${update}`);
+client.channels.cache.get('959668973908135948').send(`**Logged in as \`${client.user.tag}\` :)**\n**Updated to \`${update}\`!**`)
 })
 client.on("ready", () => {
    // Status list
