@@ -1,4 +1,4 @@
-const update = "1.0.17"
+const update = "1.0.18"
 //const update = process.env['UPDATE'];
 //const client.shard.id = shard
 global.update = update;
