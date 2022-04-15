@@ -1,8 +1,5 @@
-const update = "1.0.17"
-//const update = process.env['UPDATE'];
-//const client.shard.id = shard
-global.update = update;
-//const updateInfo = "• use /inbox for information"
+const update = ("1.0.19")
+const updateInfo = ("• use /inbox for information")
 
 const fs = require('fs');
 const {
@@ -90,27 +87,27 @@ client.on('interactionCreate', async interaction => {
 //const updateInfo = " "
 // THIS IS THE STATUS
 client.on("ready", () => {
-console.log(`Logged in as ${client.user.tag} :)\nUpdated to ${update}`);
-client.channels.cache.get('959668973908135948').send(`**Logged in as \`${client.user.tag}\` :)**\n**Updated to \`${update}\`!**`)
-})
-client.on("ready", () => {
-   // Status list
-   const activities = [
-    ` `,
-    `In ${client.guilds.cache.size} Servers!`,
-    `With ${client.users.cache.size} Users!`,
-    `Update ${update}`
-//    `SHARD: ${data.shardId}`
-];
-    
-  // run every 10 seconds    
-  setInterval(() => {
-    // generate random number between 1 and list length.
-    const randomIndex = Math.floor(Math.random() * (activities.length - 1) + 1);
-    const newActivity = activities[randomIndex];
-    client.user.setActivity(newActivity);
-  }, 10000);
-});
+    console.log(`Logged in as ${client.user.tag} :)\nUpdated to ${update}`);
+    client.channels.cache.get('959668973908135948').send(`**Logged in as \`${client.user.tag}\` :)**\n**Updated to \`${update}\`!**`)
+    })
+    client.on("ready", () => {
+       // Status list
+       const activities = [
+        ` `,
+        `In ${client.guilds.cache.size} Servers!`,
+        `With ${client.users.cache.size} Users!`,
+        `Update ${update}`
+    //    `SHARD: ${data.shardId}`
+    ];
+        
+      // run every 10 seconds    
+      setInterval(() => {
+        // generate random number between 1 and list length.
+        const randomIndex = Math.floor(Math.random() * (activities.length - 1) + 1);
+        const newActivity = activities[randomIndex];
+        client.user.setActivity(newActivity);
+      }, 10000);
+    });
 
 // Login to Discord with your bot's token
 //client.login(TOKEN);
