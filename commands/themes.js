@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
-const update = ("1.0.19")
+const update = ("1.0.21")
 //const update = process.env['UPDATE'];
 const updateInfo = ("• use /inbox for information")
 
@@ -79,6 +79,6 @@ const comingsoon = new MessageEmbed()
 const poolrooms = new MessageEmbed()
         .setColor('a69518')
         .setTitle('Pool Rooms')
-        .setDescription('The Pool Rooms are a level theme that was added in [Update 002](https://the-backrooms-survival.fandom.com/wiki/Updates).\n\nThey are flooded with water up to knee height, and are home to the [Shark](https://the-backrooms-survival.fandom.com/wiki/Sharks) Entity, and nothing else.\n\n[[Wiki](https://the-backrooms-survival.fandom.com/wiki/Pool_Rooms)]')
+        .setDescription('The Pool Rooms are a level theme that was added in [Update 002](https://the-backrooms-survival.fandom.com/wiki/Updates).\n\nThey are flooded with water up to knee height, and are home to the [Shark](https://the-backrooms-survival.fandom.com/wiki/Sharks) Entity, and nothing else.\n\n[ [Wiki](https://the-backrooms-survival.fandom.com/wiki/Pool_Rooms) ]')
         .setImage('https://static.wikia.nocookie.net/the-backrooms-survival/images/4/46/Pool_Room.png/revision/latest/scale-to-width-down/700?cb=20220415000348')
         .setFooter(`Update: ${update} ${updateInfo}`)
