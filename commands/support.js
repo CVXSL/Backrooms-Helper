@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
-const update = ("1.0.20")
+const update = ("1.0.21")
 //const update = process.env['UPDATE'];
 const updateInfo = ("• use /inbox for information")
 
