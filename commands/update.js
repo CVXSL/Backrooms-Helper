@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
-const update = ("1.0.21")
+const update = ("1.0.22")
 //const update = process.env['UPDATE'];
 const updateInfo = ("• use /inbox for information")
 
@@ -22,6 +22,11 @@ module.exports = {
             subcommand
                 .setName('003')
                 .setDescription("Update Logs for Update #003!")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('004')
+                .setDescription("Update Logs for Update #004!")
         ),
 
 
@@ -32,6 +37,8 @@ module.exports = {
             await interaction.reply({ embeds: [update002] });
     }   else if (interaction.options.getSubcommand() === "003") {
             await interaction.reply({ embeds: [update003] });
+    }   else if (interaction.options.getSubcommand() === "004") {
+            await interaction.reply({ embeds: [update004] });
     } else {
         await interaction.reply("No sub command was used.")
         }
@@ -52,6 +59,12 @@ const update002 = new MessageEmbed()
 
 const update003 = new MessageEmbed()
         .setColor('a69518')
-        //.setTitle('Update #003')
-        .setDescription('`**Update #003 Coming April 20, 2022!**`')
+        .setTitle('Update #002')
+        .setDescription('**[April 16, 2022](https://store.steampowered.com/news/app/1889640/view/3228526756473864754)**\n\n> Hello,\n> We\'ve decided to release an extra game update today for "The Backrooms: Survival", a quick patch fixing a few bugs. The weekly updates will still take place this Wednesday also.\n\n```fix\n-Fixed the "level skip glitch" which can be done with ladders\n-Fixed a bug that prevented the "Demon Slayer" achievement from unlocking for some\n-Limited the amounts of safes that spawn on levels as there were far too many\n-Fixed cosmetic bugs that can cause in some rare cases vents or lights to spawn over ladders\n-Fixed a very rare bug with the new pool rooms theme where the ladder could spawn outside of the level\n-Batteries are much bigger and sparkle to make them stand out more as previously some players were having issues spotting them\n-Fixed a bug where the player could sometimes manage to jump out through the ceiling\n-Fixed a bug where moving to the "level 0" them wouldn\'t update the new entities to spawn and would use the old ones (i.e going from the circus theme to the level 0 theme would still spawn clowns in level 0, which shouldn\'t have happened)\n-Fixed a bug that prevented textboxes from popping up sometimes (was caused by using a ladder/trapdoor/vent etc while being chased by an entity)\n\nThis unplanned patch update was released due to bug reports on our official discord. Join the discord below to report bugs/leave game suggestions as it is easier to be seen there and grouped into being fixed in unexpected patches like these!\n\nhttps://discord.com/invite/qbQhTy2JhK <<< Discord link\n\nCheers!\n```\n[ [Steam](https://store.steampowered.com/news/app/1889640/view/3228526756473864754) | [Wiki](https://the-backrooms-survival.fandom.com/wiki/Updates) ]')
+        .setFooter(`Update: ${update} ${updateInfo}`)
+
+const update004 = new MessageEmbed()
+        .setColor('a69518')
+        //.setTitle('Update #004')
+        .setDescription('`**Update #004 Coming April 20, 2022!**`')
         //.setFooter(`Update: ${update} ${updateInfo}`)
