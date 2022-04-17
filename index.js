@@ -1,4 +1,4 @@
-const update = ("1.0.22")
+const update = ("1.0.23")
 const updateInfo = ("• use /inbox for information")
 
 const fs = require('fs');
