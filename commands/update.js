@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
-const update = ("1.0.24")
+const update = ("1.0.25")
 //const update = process.env['UPDATE'];
 const updateInfo = ("• use /inbox for information")
 
@@ -27,11 +27,16 @@ module.exports = {
             subcommand
                 .setName('004')
                 .setDescription("Update Logs for Update #004!")
-        ),
+        )
+        .addSubcommand(subcommand =>
+                subcommand
+                    .setName('005')
+                    .setDescription("Update Logs for Update #005!")
+            ),
 
 
     async execute(interaction) { 
-        if (interaction.options.getSubcommand() === "001") {
+             if (interaction.options.getSubcommand() === "001") {
             await interaction.reply({ embeds: [update001] });
     }   else if (interaction.options.getSubcommand() === "002") {
             await interaction.reply({ embeds: [update002] });
@@ -39,6 +44,8 @@ module.exports = {
             await interaction.reply({ embeds: [update003] });
     }   else if (interaction.options.getSubcommand() === "004") {
             await interaction.reply({ embeds: [update004] });
+    }   else if (interaction.options.getSubcommand() === "005") {
+            await interaction.reply({ embeds: [update005] });
     } else {
         await interaction.reply("No sub command was used.")
         }
@@ -65,6 +72,12 @@ const update003 = new MessageEmbed()
 
 const update004 = new MessageEmbed()
         .setColor('a69518')
-        //.setTitle('Update #004')
-        .setDescription('`**Update #004 Coming April 20, 2022!**`')
+        .setTitle('Update #004')
+        .setDescription('**[April 20, 2022](https://store.steampowered.com/news/app/1889640/view/3224023791140073202)**\n\n> Update #004 is now out!\n\n```fix\n-Added a new level: Level FUN! This level is slightly different than others as it features more open and bigger rooms\n-Added new entities: Partygoers! Only appearing on level FUN, they tend to endlessly stalk you co-ordinating together before giving chase\n-Added presents. Only appearing in level FUN, unwrap them for an item... or a surprise!\n-Added new ambient SFX\n-Added new profession: Cannibal! Can eat dead bodies without hunger/sanity requirements, gains health from eating them, and does NOT lose sanity\n-Added new profession: serial killer! Deals more damage to entities. Don\'t lose sanity when looking at dead bodies\n-fixed graffiti glowing in the dark\n-A handful of items now spawn when starting a new level, as well as more procedurally appearing with time. Makes finding items easier\n-Janitor perk nerfed slightly to further improve the chance of finding items\n-Entities now drop loot (random items) when killed\n-fixed bug where if you quit while crouching player will still be crouching on a new game\n-fixed various typos\n-Electrician profession now changed to start with a flashlight and two spare batteries\n-added an achievement for beating a dead corpse\n-improved some entity animations\n-you can now toggle your equipped flashlight on/off when out to save battery with the left mouse button-\n-fixed a collider bug with the dojo door\n-fixed the chainsaw SFX not being adjusted by the "CHASE SFX" volume slider\n-fixed cameras/puddles/vents sometimes intersecting with ladders\n-fixed weapons swinging when left-clicking on pause menus\n-fixed a bug with the knife not in the nun\'s hand properly\n-fixed angel bell item floating on the ground bug\n-fixed a bug where smilers aren\'t removed on going to new levels and thus could endlessly stack\n-fixed ancient ruins entity slightly floating off the ground bug\n-various other minor bug fixes [ [Steam](https://store.steampowered.com/news/app/1889640/view/3224023791140073202) | [Wiki](https://the-backrooms-survival.fandom.com/wiki/Updates) ]')
+        .setFooter(`Update: ${update} ${updateInfo}`)
+
+const update005 = new MessageEmbed()
+        .setColor('a69518')
+        //.setTitle('Update #005')
+        .setDescription('**`Update #005 Coming April 27, 2022!`**')
         //.setFooter(`Update: ${update} ${updateInfo}`)
