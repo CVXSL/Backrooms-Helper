@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
-const update = ("1.0.26")
+const update = ("1.0.27")
 //const update = process.env['UPDATE'];
 const updateInfo = ("• use /inbox for information")
 
@@ -79,5 +79,5 @@ const update004 = new MessageEmbed()
 const update005 = new MessageEmbed()
         .setColor('a69518')
         //.setTitle('Update #005')
-        .setDescription('**`Update #005 Coming April 27, 2022!`**')
+        .setDescription('**`Update #005 Estimated for April 27, 2022!`**')
         //.setFooter(`Update: ${update} ${updateInfo}`)
