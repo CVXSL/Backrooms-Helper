@@ -42,17 +42,17 @@ module.exports = {
               await interaction.reply('successfully added the role!')
         }
         else if (!member.roles.cache.some(role => role.name === 'Mod'))
-        await interaction.reply('No.')
+        await interaction.reply('You do not have the proper permissons to execute this command!')
     } 
         else if (interaction.options.getSubcommand() === 'remove'){
             if (member.roles.cache.some(role => role.name === 'Mod'))  {
             let target = interaction.options.getMember('target')
               let role = interaction.options.getRole('role')
               target.roles.remove(role)
-              await interaction.reply('successfully removed the role!')
+              await interaction.reply('Successfully removed the role!')
         }
         else if (!member.roles.cache.some(role => role.name === 'Mod'))
-        await interaction.reply('No.')
+        await interaction.reply('You do not have the proper permissons to execute this command!')
        }
     }
 };
