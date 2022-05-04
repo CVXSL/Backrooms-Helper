@@ -16,8 +16,7 @@ const {
 } = require('discord.js');
 
 // Create a new client instance
-const client = new Client({
-    intents: [Intents.FLAGS.GUILDS]
+const client = new Client({  intents: [Intents.FLAGS.GUILDS]
 });
 
 // Loading commands from the commands folder
