@@ -1,4 +1,4 @@
-const update = ("1.0.25")
+const update = ("1.0.27")
 const updateInfo = ("• use /inbox for information")
 
 const fs = require('fs');
@@ -107,8 +107,7 @@ client.on("ready", () => {
         const newActivity = activities[randomIndex];
         client.user.setActivity(newActivity);
       }, 10000);
-    });
+        });
 
 // Login to Discord with your bot's token
-//client.login(TOKEN);
 client.login(process.env.token);
