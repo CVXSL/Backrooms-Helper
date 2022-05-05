@@ -110,5 +110,4 @@ client.on("ready", () => {
         });
 
 // Login to Discord with your bot's token
-//client.login(TOKEN);
 client.login(process.env.token);
