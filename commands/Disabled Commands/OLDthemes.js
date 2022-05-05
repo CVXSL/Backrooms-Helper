@@ -1,4 +1,3 @@
-const{ Discord, MessageActionRow, MessageSelectMenu } =  require("discord.js")
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
 const update = ("1.0.28")
@@ -8,141 +7,91 @@ const updateInfo = ("• use /inbox for information")
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('themes')
-        .setDescription('Learn about different Themes!'),
+        .setDescription('Grabs Theme information!')
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName("pool-rooms")
+                .setDescription('Pool Rooms Theme!')
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('ancient-rooms')
+                .setDescription("Ancient Rooms Theme!")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('dirt-rooms')
+                .setDescription("Dirt Rooms Theme!")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('back-rooms')
+                .setDescription("Back Rooms Theme!")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('hospital')
+                .setDescription("Hospital Theme!")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('hedge-maze')
+                .setDescription("Hedge Maze Theme!")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('circus')
+                .setDescription("Circus Theme!")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('greek-labyrinth')
+                .setDescription("Labyrinth Theme!")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('dojo')
+                .setDescription("Dojo Theme!")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('level-fun')
+                .setDescription("Level Fun Theme!")
+        )
+        .addSubcommand(subcommand =>
+            subcommand  
+                .setName('pipe-dreams')
+                .setDescription("Pipe Dreams Theme!")
+        ),     
 
-	async execute(interaction) {
-    const row = new MessageActionRow()
-			.addComponents(
-				new MessageSelectMenu()
-					.setCustomId('select')
-					.setPlaceholder('Nothing selected')
-					.addOptions([
-						{
-							label: 'Pool Rooms',
-							description: 'Read more information on Pool Rooms!',
-							value: 'poolrooms',
-						},
-						{
-							label: 'Ancient Rooms',
-							description: 'Read more information on Ancient Rooms!',
-							value: 'ancientrooms',
-						},
-						{
-							label: 'Dirt Rooms',
-							description: 'Read more information on Dirt Rooms!',
-							value: 'dirtrooms',
-						},
-						{
-							label: 'Back Rooms',
-							description: 'Read more information on Back Rooms!',
-							value: 'backrooms',
-						},
-						{
-							label: 'Hospital',
-							description: 'Read more information on Hospital!',
-							value: 'hospital',
-						},
-						{
-							label: 'Hedge Maze',
-							description: 'Read more information on Hedge Maze!',
-							value: 'hedgemaze',
-						},
-						{
-							label: 'Circus',
-							description: 'Read more information on Circus!',
-							value: 'circus',
-						},
-						{
-							label: 'Greek Labyrinth',
-							description: 'Read more information on Greek Labyrinth!',
-							value: 'greeklabyrinth',
-						},
-						{
-							label: 'Dojo',
-							description: 'Read more information on Dojo!',
-							value: 'dojo',
-						},
-						{
-							label: 'Level Fun',
-							description: 'Read more information on Level Fun!',
-							value: 'levelfun',
-						},
-						{
-							label: 'Pipe Dreams',
-							description: 'Read more information on Pipe Dreams!',
-							value: 'pipedreams',
-						},
-						{
-							label: 'Sewers',
-							description: 'Read more information on Sewers!',
-							value: 'sewers',
-						},
-					]),
-                )
-
-		await interaction.reply({ embeds:[themes], ephemeral:false, components: [row] });
-
-		const collector = interaction.channel.createMessageComponentCollector({
-			            contentType: "SELECT_MENU"
-			        })
-			
-			        collector.on("collect", async (collected) => { 
-			        const value = collected.values[0]
-			
-			        if(value === "poolrooms") {
-			            collected.reply({ embeds:[poolrooms], ephemeral:true })
-			        }
-			
-			        if(value === "ancientrooms") {
-			            collected.reply({ embeds:[comingsoon], ephemeral:true })
-			        }
-			
-			        if(value === "dirtrooms") {
-			            collected.reply({ embeds:[dirtrooms], ephemeral:true })
-			        }
-			
-			        if(value === "backrooms") {
-			            collected.reply({ embeds:[backrooms], ephemeral:true })
-			        }
-			
-			        if(value === "hospital") {
-			            collected.reply({ embeds:[hospital], ephemeral:true })
-			        }
-			
-			        if(value === "hedgemaze") {
-			            collected.reply({ embeds:[hedgemaze], ephemeral:true })
-			        }
-			
-			        if(value === "circus") {
-			            collected.reply({ embeds:[circus], ephemeral:true })
-			        }
-			
-			        if(value === "greeklabyrinth") {
-			            collected.reply({ embeds:[greeklabyrinth], ephemeral:true })
-			        }
-			
-			        if(value === "dojo") {
-			            collected.reply({ embeds:[dojo], ephemeral:true })
-			        }
-			
-			        if(value === "levelfun") {
-			            collected.reply({ embeds:[levelfun], ephemeral:true })
-			        }
-			
-			        if(value === "pipedreams") {
-			            collected.reply({ embeds:[pipedreams], ephemeral:true })
-			        }
-			
-			        if(value === "sewers") {
-			            collected.reply({ embeds:[comingsoon], ephemeral:true })
-			        }
-				})
-    }
+    async execute(interaction) { 
+        if (interaction.options.getSubcommand() === "pool-rooms") {
+            await interaction.reply({ embeds: [poolrooms] });
+    }   else if (interaction.options.getSubcommand() === "ancient-rooms") {
+            await interaction.reply({ embeds: [comingsoon] });
+    }   else if (interaction.options.getSubcommand() === "dirt-rooms") {
+            await interaction.reply({ embeds: [dirtrooms] });
+    }   else if (interaction.options.getSubcommand() === "back-rooms") {
+            await interaction.reply({ embeds: [backrooms] });
+    }   else if (interaction.options.getSubcommand() === "hospital") {
+            await interaction.reply({ embeds: [hospital] });
+    }   else if (interaction.options.getSubcommand() === "hedge-maze") {
+            await interaction.reply({ embeds: [hedgemaze] });
+    }   else if (interaction.options.getSubcommand() === "circus") {
+            await interaction.reply({ embeds: [circus] });
+    }   else if (interaction.options.getSubcommand() === "greek-labyrinth") {
+            await interaction.reply({ embeds: [greeklabyrinth] });
+    }   else if (interaction.options.getSubcommand() === "dojo") {
+            await interaction.reply({ embeds: [dojo] });
+    }   else if (interaction.options.getSubcommand() === "level-fun") {
+            await interaction.reply({ embeds: [levelfun] });
+    }   else if (interaction.options.getSubcommand() === "pipe-dreams") {
+            await interaction.reply({ embeds: [pipedreams] });
+    } else {
+        await interaction.reply("No sub command was used.")
+        }
+    },
 };
-
-const themes = new MessageEmbed()
-        .setTitle("**`Pick a Theme!`**")
-        .setColor("a69518")
 
 const comingsoon = new MessageEmbed()
         .setColor('a69518')

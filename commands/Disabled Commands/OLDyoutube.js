@@ -1,4 +1,3 @@
-const{ Discord, MessageActionRow, MessageSelectMenu } =  require("discord.js")
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
 const update = ("1.0.28")
@@ -8,51 +7,29 @@ const updateInfo = ("• use /inbox for information")
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('youtube')
-        .setDescription('View our official YouTubers!'),
+        .setDescription('View the latest content from partnered creators!')
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName("absoluteandrew")
+                .setDescription('View the latest content from AbsoluteAndrew!')
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('cvxsl')
+                .setDescription("View the latest content from CVXSL!")
+        ),
 
-	async execute(interaction) {
-    const row = new MessageActionRow()
-			.addComponents(
-				new MessageSelectMenu()
-					.setCustomId('select')
-					.setPlaceholder('Nothing selected')
-					.addOptions([
-						{
-							label: 'AbsoluteAndrew',
-							description: 'Vew the latest from AbsoluteAndrew!',
-							value: 'absoluteandrew',
-						},
-						{
-							label: 'CVXSL',
-							description: 'Vew the latest from CVXSL!',
-							value: 'cvxsl',
-						},
-					]),
-                )
 
-		await interaction.reply({ embeds:[youtubes], ephemeral:false, components: [row] });
-
-		const collector = interaction.channel.createMessageComponentCollector({
-			            contentType: "SELECT_MENU"
-			        })
-			
-			        collector.on("collect", async (collected) => { 
-			        const value = collected.values[0]
-			
-			        if(value === "absoluteandrew") {
-			            collected.reply({ embeds:[absoluteandrew], ephemeral:true })
-			        }
-			
-			        if(value === "cvxsl") {
-			            collected.reply({ embeds:[cvxsl], ephemeral:true })
-			        }
-				})
-    }
+    async execute(interaction) { 
+        if (interaction.options.getSubcommand() === "absoluteandrew") {
+            await interaction.reply({ embeds: [absoluteandrew] });
+    }   else if (interaction.options.getSubcommand() === "cvxsl") {
+            await interaction.reply({ embeds: [cvxsl] });
+    } else {
+        await interaction.reply("No sub command was used.")
+        }
+    },
 };
-
-const youtubes = new MessageEmbed()
-        .setTitle("**`Pick a YouTube Channel!`**")
-        .setColor("a69518")
 
 const absoluteandrew = new MessageEmbed()
         .setColor('a69518')

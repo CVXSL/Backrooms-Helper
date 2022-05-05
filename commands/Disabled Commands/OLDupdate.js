@@ -1,4 +1,3 @@
-const{ Discord, MessageActionRow, MessageSelectMenu } =  require("discord.js")
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
 const update = ("1.0.28")
@@ -8,96 +7,63 @@ const updateInfo = ("• use /inbox for information")
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('update')
-        .setDescription('Update Logs for every game Update!'),
+        .setDescription('Grabs update logs for the selected update!')
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName("001")
+                .setDescription('Update Logs for Update #001!')
+        )
+         .addSubcommand(subcommand =>
+            subcommand
+                .setName('002')
+                .setDescription("Update Logs for Update #002!")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('003')
+                .setDescription("Update Logs for Update #003!")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('004')
+                .setDescription("Update Logs for Update #004!")
+        )
+        .addSubcommand(subcommand =>
+                subcommand
+                .setName('005')
+                .setDescription("Update Logs for Update #005!")
+        )
+        .addSubcommand(subcommand =>
+                subcommand
+                .setName('006')
+                .setDescription("Update Logs for Update #006!")
+        )
+        .addSubcommand(subcommand =>
+                subcommand
+                .setName('007')
+                .setDescription("Update Logs for Update #007!")
+        ),
 
-	async execute(interaction) {
-    const row = new MessageActionRow()
-			.addComponents(
-				new MessageSelectMenu()
-					.setCustomId('select')
-					.setPlaceholder('Nothing selected')
-					.addOptions([
-						{
-							label: 'Update 001',
-							description: 'Update Logs for Update #001!',
-							value: '001',
-						},
-						{
-							label: 'Update 002',
-							description: 'Update Logs for Update #002!',
-							value: '002',
-						},
-                                                {
-							label: 'Update 003',
-							description: 'Update Logs for Update #003!',
-							value: '003',
-						},
-                                                {
-							label: 'Update 004',
-							description: 'Update Logs for Update #004!',
-							value: '004',
-						},
-                                                {
-							label: 'Update 005',
-							description: 'Update Logs for Update #005!',
-							value: '005',
-						},
-                                                {
-							label: 'Update 006',
-							description: 'Update Logs for Update #006!',
-							value: '006',
-						},
-                                                {
-							label: 'Update 007',
-							description: 'Update Logs for Update #007!',
-							value: '007',
-						},
-					]),
-                )
-
-		await interaction.reply({ embeds:[updates], ephemeral:false, components: [row] });
-
-		const collector = interaction.channel.createMessageComponentCollector({
-			            contentType: "SELECT_MENU"
-			        })
-			
-			        collector.on("collect", async (collected) => { 
-			        const value = collected.values[0]
-			
-			            if(value === "001") {
-			                collected.reply({ embeds:[update001], ephemeral:true })
-			            }
-			
-			            if(value === "002") {
-                                        collected.reply({ embeds:[update002], ephemeral:true })
-                                    }
-
-                                    if(value === "003") {
-                                        collected.reply({ embeds:[update003], ephemeral:true })
-                                    }
-
-                                    if(value === "004") {
-                                        collected.reply({ embeds:[update004], ephemeral:true })
-                                    }
-
-                                    if(value === "005") {
-                                        collected.reply({ embeds:[update005], ephemeral:true })
-                                    }
-
-                                    if(value === "006") {
-                                        collected.reply({ embeds:[update006], ephemeral:true })
-                                    }
-
-                                    if(value === "007") {
-                                        collected.reply({ embeds:[update007], ephemeral:true })
-                                    }
-				})
-    }
+    async execute(interaction) { 
+             if (interaction.options.getSubcommand() === "001") {
+            await interaction.reply({ embeds: [update001] });
+    }   else if (interaction.options.getSubcommand() === "002") {
+            await interaction.reply({ embeds: [update002] });
+    }   else if (interaction.options.getSubcommand() === "003") {
+            await interaction.reply({ embeds: [update003] });
+    }   else if (interaction.options.getSubcommand() === "004") {
+            await interaction.reply({ embeds: [update004] });
+    }   else if (interaction.options.getSubcommand() === "005") {
+            await interaction.reply({ embeds: [update005] });
+    }   else if (interaction.options.getSubcommand() === "006") {
+            await interaction.reply({ embeds: [update006] });
+    }   else if (interaction.options.getSubcommand() === "007") {
+            await interaction.reply({ embeds: [update007] });
+    } else {
+        await interaction.reply("No sub command was used.")
+        }
+    },
 };
-
-const updates = new MessageEmbed()
-        .setTitle("**`Pick an update!`**")
-        .setColor("a69518")
 
 const update001 = new MessageEmbed()
         .setColor('a69518')

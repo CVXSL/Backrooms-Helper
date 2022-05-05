@@ -1,7 +1,7 @@
 const{ Discord, MessageActionRow, MessageSelectMenu } =  require("discord.js")
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
-const update = ("1.0.27")
+const update = ("1.0.28")
 //const update = process.env['UPDATE'];
 const updateInfo = ("• use /inbox for information")
 
@@ -50,16 +50,16 @@ module.exports = {
     }
 };
 
-	const test1 = new MessageEmbed()
+const test1 = new MessageEmbed()
         .setTitle("You selected something!")
         .setDescription("You chose test 1!")
         .setColor("a69518")
 
-    const test2 = new MessageEmbed()
+const test2 = new MessageEmbed()
         .setTitle("You selected something!")
         .setDescription("You chose test 2!")
         .setColor("a69518")
 
-	const test = new MessageEmbed()
+const test = new MessageEmbed()
         .setTitle("This is a test command!")
         .setColor("a69518")

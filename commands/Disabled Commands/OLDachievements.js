@@ -1,4 +1,3 @@
-const{ Discord, MessageActionRow, MessageSelectMenu } =  require("discord.js")
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
 const update = ("1.0.28")
@@ -8,213 +7,155 @@ const updateInfo = ("• use /inbox for information")
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('achievements')
-        .setDescription('Learn about different Achievements!'),
+        .setDescription('Grabs achivment information!')
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName("lucky-escape")
+                .setDescription('Survive being chased by an entity!')
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('first-steps')
+                .setDescription("Reach Level 1!")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('scheduled-programming')
+                .setDescription("Find a television!")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('hello')
+                .setDescription("Find a telephone!")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('who-let-the-dogs-out')
+                .setDescription("Encounter a hound!")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('say-cheese')
+                .setDescription("Encounter a smiler!")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('the-trespasser')
+                .setDescription("Unlock a locked door!")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('explorer')
+                .setDescription("Reach Level 3!")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('therapy')
+                .setDescription("Use a sanity pill!")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('backtracking')
+                .setDescription("Return to a previous level!")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('play-time')
+                .setDescription("Find a stuffed toy!")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('dungeoneer')
+                .setDescription("Reach Level 5!")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('ancient-mythology')
+                .setDescription("Find the \"Greek labyrinth\" level!")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('safe-cracker')
+                .setDescription("Unlock a safe!")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('swimming-lessons')
+                .setDescription("Find the \"Poolrooms\" level!")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('demon-slayer')
+                .setDescription("Kill any entity with a weapon!")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('dungeon-master')
+                .setDescription("Reach Level 10!")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('through-the-roof')
+                .setDescription("Unlock and climb through an air vent!")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('desperate-measures')
+                .setDescription("Eat a corpse!")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('party-starter')
+                .setDescription("Find \"Level FUN\"!")
+        ),
 
-	async execute(interaction) {
-    const row = new MessageActionRow()
-			.addComponents(
-				new MessageSelectMenu()
-					.setCustomId('select')
-					.setPlaceholder('Nothing selected')
-					.addOptions([
-						{
-							label: 'Lucky Escape',
-							description: 'Read more information on Lucky Escape!',
-							value: 'luckyescape',
-						},
-						{
-							label: 'First Steps',
-							description: 'Read more information on First Steps!',
-							value: 'firststeps',
-						},
-						{
-							label: 'Scheduled Programming',
-							description: 'Read more information on Scheduled Programming!',
-							value: 'scheduledprogramming',
-						},
-						{
-							label: 'Hello..?',
-							description: 'Read more information on Hello..?!',
-							value: 'hello',
-						},
-						{
-							label: 'Who let the dogs out?',
-							description: 'Read more information on Who let the dogs out?!',
-							value: 'wholetthedogsout',
-						},
-						{
-							label: 'Say CHEESE!',
-							description: 'Read more information on Say CHEESE!!',
-							value: 'saycheese',
-						},
-						{
-							label: 'The Trespasser',
-							description: 'Read more information on The Trespasser!',
-							value: 'thetrespasser',
-						},
-						{
-							label: 'Explorer',
-							description: 'Read more information on Explorer!',
-							value: 'explorer',
-						},
-						{
-							label: 'Therapy',
-							description: 'Read more information on Therapy!',
-							value: 'therapy',
-						},
-						{
-							label: 'Backtracking',
-							description: 'Read more information on Backtracking!',
-							value: 'backtracking',
-						},
-						{
-							label: 'Play Time',
-							description: 'Read more information on Play Time!',
-							value: 'playtime',
-						},
-						{
-							label: 'Dungeoneer',
-							description: 'Read more information on Dungeoneer!',
-							value: 'dungeoneer',
-						},
-						{
-							label: 'Ancient Mythology',
-							description: 'Read more information on Ancient Mythology!',
-							value: 'ancientmythology',
-						},
-						{
-							label: 'Safe-Cracker',
-							description: 'Read more information on Safe-Cracker!',
-							value: 'safecracker',
-						},
-						{
-							label: 'Swimming Lessons',
-							description: 'Read more information on Swimming Lessons!',
-							value: 'swimminglessons',
-						},
-						{
-							label: 'Demon Slayer',
-							description: 'Read more information on Demon Slayer!',
-							value: 'demonslayer',
-						},
-						{
-							label: 'Dungeon Master',
-							description: 'Read more information on Dungeon Master!',
-							value: 'dungeonmaster',
-						},
-						{
-							label: 'Through The Roof',
-							description: 'Read more information on Through The Roof!',
-							value: 'throughtheroof',
-						},
-						{
-							label: 'Desperate Measures',
-							description: 'Read more information on Desperate Measures!',
-							value: 'desperatemeasures',
-						},
-						{
-							label: 'Party Starter',
-							description: 'Read more information on Party Starter!',
-							value: 'partystarter',
-						},
-					]),
-                )
-
-		await interaction.reply({ embeds:[achievements], ephemeral:false, components: [row] });
-
-		const collector = interaction.channel.createMessageComponentCollector({
-			            contentType: "SELECT_MENU"
-			        })
-			
-			        collector.on("collect", async (collected) => { 
-			        const value = collected.values[0]
-			
-			        if(value === "luckyescape") {
-			            collected.reply({ embeds:[luckyescape], ephemeral:true })
-			        }
-			
-			        if(value === "firststeps") {
-			            collected.reply({ embeds:[firststeps], ephemeral:true })
-			        }
-
-					if(value === "scheduledprogramming") {
-			            collected.reply({ embeds:[scheduledprogramming], ephemeral:true })
-			        }
-
-					if(value === "hello") {
-			            collected.reply({ embeds:[hello], ephemeral:true })
-			        }
-
-					if(value === "wholetthedogsout") {
-			            collected.reply({ embeds:[wholetthedogsout], ephemeral:true })
-			        }
-
-					if(value === "saycheese") {
-			            collected.reply({ embeds:[saycheese], ephemeral:true })
-			        }
-
-					if(value === "thetrespasser") {
-			            collected.reply({ embeds:[thetrespasser], ephemeral:true })
-			        }
-
-					if(value === "explorer") {
-			            collected.reply({ embeds:[explorer], ephemeral:true })
-			        }
-
-					if(value === "therapy") {
-			            collected.reply({ embeds:[therapy], ephemeral:true })
-			        }
-
-					if(value === "backtracking") {
-			            collected.reply({ embeds:[backtracking], ephemeral:true })
-			        }
-
-					if(value === "playtime") {
-			            collected.reply({ embeds:[playtime], ephemeral:true })
-			        }
-
-					if(value === "dungeoneer") {
-			            collected.reply({ embeds:[dungeoneer], ephemeral:true })
-			        }
-
-					if(value === "ancientmythology") {
-			            collected.reply({ embeds:[ancientmythology], ephemeral:true })
-			        }
-
-					if(value === "safecracker") {
-			            collected.reply({ embeds:[safecracker], ephemeral:true })
-			        }
-
-					if(value === "swimminglessons") {
-			            collected.reply({ embeds:[swimminglessons], ephemeral:true })
-			        }
-
-					if(value === "demonslayer") {
-			            collected.reply({ embeds:[demonslayer], ephemeral:true })
-			        }
-
-					if(value === "dungeonmaster") {
-			            collected.reply({ embeds:[dungeonmaster], ephemeral:true })
-			        }
-
-					if(value === "throughtheroof") {
-			            collected.reply({ embeds:[throughtheroof], ephemeral:true })
-			        }
-
-					if(value === "desperatemeasures") {
-			            collected.reply({ embeds:[desperatemeasures], ephemeral:true })
-			        }
-
-					if(value === "partystarter") {
-			            collected.reply({ embeds:[partystarter], ephemeral:true })
-			        }
-				})
-    }
+    async execute(interaction) { 
+        if (interaction.options.getSubcommand() === "lucky-escape") {
+            await interaction.reply({ embeds: [luckyescape] });
+    }   else if (interaction.options.getSubcommand() === "first-steps") {
+            await interaction.reply({ embeds: [firststeps] });
+    }   else if (interaction.options.getSubcommand() === "scheduled-programming") {
+            await interaction.reply({ embeds: [scheduledprogramming] });
+    }   else if (interaction.options.getSubcommand() === "hello") {
+            await interaction.reply({ embeds: [hello] });
+    }   else if (interaction.options.getSubcommand() === "who-let-the-dogs-out") {
+            await interaction.reply({ embeds: [wholetthedogsout] });
+    }   else if (interaction.options.getSubcommand() === "say-cheese") {
+            await interaction.reply({ embeds: [saycheese] });
+    }   else if (interaction.options.getSubcommand() === "the-trespasser") {
+            await interaction.reply({ embeds: [thetrespasser] });
+    }   else if (interaction.options.getSubcommand() === "explorer") {
+            await interaction.reply({ embeds: [explorer] });
+    }   else if (interaction.options.getSubcommand() === "therapy") {
+            await interaction.reply({ embeds: [therapy] });
+    }   else if (interaction.options.getSubcommand() === "backtracking") {
+            await interaction.reply({ embeds: [backtracking] });
+    }   else if (interaction.options.getSubcommand() === "play-time") {
+            await interaction.reply({ embeds: [playtime] });
+    }   else if (interaction.options.getSubcommand() === "dungeoneer") {
+            await interaction.reply({ embeds: [dungeoneer] });
+    }   else if (interaction.options.getSubcommand() === "ancient-mythology") {
+            await interaction.reply({ embeds: [ancientmythology] });
+    }   else if (interaction.options.getSubcommand() === "safe-cracker") {
+            await interaction.reply({ embeds: [safecracker] });
+    }   else if (interaction.options.getSubcommand() === "swimming-lessons") {
+            await interaction.reply({ embeds: [swimminglessons] });
+    }   else if (interaction.options.getSubcommand() === "demon-slayer") {
+            await interaction.reply({ embeds: [demonslayer] });
+    }   else if (interaction.options.getSubcommand() === "dungeon-master") {
+            await interaction.reply({ embeds: [dungeonmaster] });
+    }   else if (interaction.options.getSubcommand() === "through-the-roof") {
+            await interaction.reply({ embeds: [throughtheroof] });
+    }   else if (interaction.options.getSubcommand() === "desperate-measures") {
+            await interaction.reply({ embeds: [desperatemeasures] });
+    }   else if (interaction.options.getSubcommand() === "party-starter") {
+            await interaction.reply({ embeds: [partystarter] });
+    
+    } else {
+        await interaction.reply("No sub command was used.")
+        }
+    },
 };
-
-const achievements = new MessageEmbed()
-        .setTitle("**`Pick and Achievement!`**")
-        .setColor("a69518")
 
 const comingsoon = new MessageEmbed()
         .setColor('a69518')
