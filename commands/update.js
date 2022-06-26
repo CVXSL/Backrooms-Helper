@@ -1,9 +1,11 @@
 const{ Discord, MessageActionRow, MessageSelectMenu } =  require("discord.js")
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
-const update = ("1.0.28")
+
+const update = ("1.1.0")
 //const update = process.env['UPDATE'];
-const updateInfo = ("• use /inbox for information")
+//const updateInfo = ("• use /inbox for information")
+const updateInfo = (" ")
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -52,6 +54,26 @@ module.exports = {
 							description: 'Update Logs for Update #007!',
 							value: '007',
 						},
+                                                {
+							label: 'Update 008',
+							description: 'Update Logs for Update #008!',
+							value: '008',
+						},
+                                                {
+							label: 'Update 009',
+							description: 'Update Logs for Update #009!',
+							value: '009',
+						},
+                                                {
+							label: 'Update 010',
+							description: 'Update Logs for Update #010!',
+							value: '010',
+						},
+                                                {
+							label: 'Update 011',
+							description: 'Update Logs for Update #011!',
+							value: '011',
+						},
 					]),
                 )
 
@@ -90,6 +112,21 @@ module.exports = {
 
                                     if(value === "007") {
                                         collected.reply({ embeds:[update007], ephemeral:true })
+                                    }                
+                                    if(value === "008") {
+                                        collected.reply({ embeds:[update008], ephemeral:true })
+                                    }
+
+                                    if(value === "009") {
+                                        collected.reply({ embeds:[update009], ephemeral:true })
+                                    }
+
+                                    if(value === "010") {
+                                        collected.reply({ embeds:[update010], ephemeral:true })
+                                    }
+
+                                    if(value === "011") {
+                                        collected.reply({ embeds:[update011], ephemeral:true })
                                     }
 				})
     }
@@ -143,7 +180,35 @@ const update006 = new MessageEmbed()
 
 const update007 = new MessageEmbed()
         .setColor('a69518')
-        //.setTitle('Update #007')
-        .setDescription('**`Update #007 Estimated for May 11, 2022!`**')
+        .setTitle('Update #007')
+        .setDescription('**[May 31, 2022](https://store.steampowered.com/news/app/1889640/view/3336617587212676014)**\n\n> Multiplayer is out now! Thank you all for your patience in waiting! We will return now to weekly updates from next week, adding additional content such as the usual new levels, entities, items, and so on.\n\n> Multiplayer gameplay works the same as singleplayer: explore the level and find ways to the next, while picking up items and avoiding entities. Of course, the only difference is other players will be with you!\n\n```Features:\n-Any player can host a room of up to 6 players\n-different player skins/models to choose from (more will be added)\n-Create private rooms (others will need the name to join) or public (will appear in the lobby and anyone can join\n-Proximity voice chat (can be disabled in settings)\n-PvP, players can kill/attack/damage each other. All your items are dropped on death so you can kill and loot players\n-a "revive"/Ressurection system: When another player is killed by an entity, they will enter a "stunned" mode where they will have a countdown timer until they die. Another player can revive them before the counter reaches 0 and they will come back with a third of max health. The countdown time reduces each time until it can no longer work and you will die without being able to be revived\n-the "revive" system only works if you are killed by an entity, so if another player kills you, you will instantly die and drop all your items to be looted\n\nAs expected with a huge new update, there will be some bugs. Please report any bugs, no matter how small, so they can be patched throughout the week!\n\nCheers!\n```\n[ [Steam](https://store.steampowered.com/news/app/1889640/view/3336617587212676014) | [Wiki](https://the-backrooms-survival.fandom.com/wiki/Updates) ]')
+        .setImage('https://images-ext-2.discordapp.net/external/rhwxxKHELzulUPZbefoKn4dNbEtocO4A2ADNAPMpPNE/https/cdn.cloudflare.steamstatic.com/steamcommunity/public/images/clans/41886210/18bd1bc07bca99ae2255f07231249186dc0dc5fd.png')
+        .setFooter(`Update: ${update} ${updateInfo}`)
+
+const update008 = new MessageEmbed()
+        .setColor('a69518')
+        .setTitle('Update #008')
+        .setDescription('**[June 6, 2022](https://store.steampowered.com/news/app/1889640/view/3336617587233106019)**\n\n> Hello,\n\n> We have released a multiplayer update today fixing some more of the reported bugs with multiplayer. This is multiplayer patch #005 since we launched multiplayer just five days ago, so thank you all who are taking the time to report the bugs to us so they can be fixed!\n\n**Todays Changes:**\n```\nAdded player emotes/gestures! You can select from a few different emotes in the TAB/Inventory menu\nFixed several syncing errors\nFixed proximity chat not working for some players/regions\nFixed Entity SFX still playing if killed by another player\nFixed some syncing bugs with flashlights\nAdjusted entity spawn rate in multiplayer as it was far too "aggressive"\nThe "Sewers" level is now brighter and not as big due to many players having issues with it, also fixed the slightly "floating doorways" in the sewer\nVarious other smaller fixes\n\n*EDIT:* (Just released a quick extra patch on top of this one which also fixes:)\nHaving a flashlight out potentially causes all players to teleport all over the place\nDropping a flashlight not removing it\ndropping any weapon causing you to unequip a weapon even if it\'s not the same one\nMousewheel scrolling randomly unequipping items```**All Changes/Fixes Since Launch (in case you missed the small patch notes!)**```Fixed bug where players who are revived after dying of thirst/hunger become immune to thirst/hunger\nFixed "dancing shadow lady" entity creating several entities on contact instead of just one\nFixed bug where you could take items from a chest without unlocking\nFixed a bug where trying to examine an item soft locks the game preventing the player from moving entirely\nFixed trapdoors floating in multiplayer\nFixed shadow bugs with players\nFixed bug where you can always hear other players\' footsteps no matter the distance\nFixed bug where you couldn\'t scroll down the server lobby\nFixed a bug where items were sometimes not destroyed when taken, leading to duplicate items\nFixed positioning glitches affecting player bodies/equipped items not aligning correctly\nRemoved "region locking" preventing others in different regions from playing together\nVarious other smaller fixes\n\n\nAs always, thank you to all who have reported bugs either here, the steam discussions or via our discord. Please continue to report any bugs or leave any suggestions so together we can continue to improve the game!\n\nOur Discord: (Link at buttom)!\n\nAlso, there will be a content update this Friday adding a new level theme and entity, as well as some new items and other things, and of course more multiplayer patches.\n\nCheers!\n```\n[ [Steam](https://store.steampowered.com/news/app/1889640/view/3336617587233106019) | [Wiki](https://the-backrooms-survival.fandom.com/wiki/Updates) | [Discord](https://discord.gg/qbQhTy2JhK) ]')
+        .setImage('https://images-ext-2.discordapp.net/external/AP62_7XRueX7TD1ofSsHbYKA1SxAyqQgvrfrt83EuZk/https/cdn.cloudflare.steamstatic.com/steamcommunity/public/images/clans/41886210/a644570c829dd8c0dcd777af24b5380244735d6e.png')
+        .setFooter(`Update: ${update} ${updateInfo}`)
+
+const update009 = new MessageEmbed()
+        .setColor('a69518')
+        .setTitle('Update #009')
+        .setDescription('**[June 10, 2022](https://store.steampowered.com/news/app/1889640/view/3336618221382841527)**\n\n> Hello,\n\n> we have released a new update today adding new content and fixing various bugs! As usual, another update will be out late next week too! Cheers!\n\n```Added a new level theme\nAdded a new entity\nTwo new achievements\nAdded almond water item\nTwo new weapons, similar to the Musket; The Blunderbuss and Flintlock Pistol\nFixed revive panel still sometimes showing when revived\nAdded blood drips from ceilings that appear in torture rooms, can be drunk at expense of sanity\nFixed ceiling lanterns flickering\nFixed a bug where starting a multiplayer game will clear your single-player save data\nPlayer skin is saved for single-player games\nFixed dropping items in multiplayer dropping the item at the host\'s position instead of yours\nFixed a bug where Psychiatrist sanity was not updating/displaying correctly\nfixed a bug where entities sometimes move VERY fast\nFixed a bug with the "Hound" that sometimes prevented him from dealing damage to players\nFixed a bug where you can sometimes take damage when a different player is hit\nAdded two new skins: A male soldier and a female soldier\nfixed bug where dancing shadow lady would spawn endless hostile entities in multiplayer\nFixed some shadow bugs\nFixed various syncing bugs in multiplayer\nFixed various other smaller bugs...\n```\n[ [Steam](https://store.steampowered.com/news/app/1889640/view/3336618221382841527) | [Wiki](https://the-backrooms-survival.fandom.com/wiki/Updates) ]')
+        .setImage('https://images-ext-1.discordapp.net/external/jOa30q1B1tjH685McBS68D6Sp_2VF9xvv_Ohub4JCow/https/cdn.cloudflare.steamstatic.com/steamcommunity/public/images/clans/41886210/5bc983f48b9e0a2382806955d8f2763c665a59f5.png')
+        .setFooter(`Update: ${update} ${updateInfo}`)
+
+const update010 = new MessageEmbed()
+        .setColor('a69518')
+        .setTitle('Update #010')
+        .setDescription('**[June 19, 2022](https://store.steampowered.com/news/app/1889640/view/5967847045487476967)**\n\n> Hello\n\n> We have just released another update:\n\n```-Added a "hotkey" bar where you can quickly use up to five items from your inventory\n-Fixed bug where Entity moves fast after killing a player in multiplayer\n-Fixed some syncing errors in multiplayer\n-Fixed other players taking damage when one is damaged by a campfire\n-Fixed a bug where binding examine and use to the same key allows you to duplicate a picked up item\n-Fixed a bug where if you start a new multiplayer gamer after dying on any level above 0 big syncing errors occur on a new game\n-Fixed unlocked hests not syncing for everyone\n-Added some anti-cheat measures that make it harder for people to cheat on multiplayer. (No anti-cheat method is 100% foolproof, but it does make it significantly harder for players to cheat)\n-Fixed a bug where going up a ladder causes some entities to remain stuck for other players that might see them\n-Fixed a bug where the player would sometimes take damage too if another player is attacked by an entity\nThere will be another update again sometime next week fixing more bugs and adding a new level, entity, items, etc.\n\nCheers!\n```\n[ [Steam](https://store.steampowered.com/news/app/1889640/view/5967847045487476967) | [Wiki](https://the-backrooms-survival.fandom.com/wiki/Updates) ]')
+        .setImage('https://images-ext-1.discordapp.net/external/mlPl1OFFmzkiEa0UNyW1UaqBfPpLNa1oPwdbBrook0I/https/cdn.cloudflare.steamstatic.com/steamcommunity/public/images/clans/41886210/146d319df4c6bc16d9a75f7bbfa5642886e7f4b0.png')
+        .setFooter(`Update: ${update} ${updateInfo}`)
+
+const update011 = new MessageEmbed()
+        .setColor('a69518')
+        //.setTitle('Update #011')
+        .setDescription('**`Update #011 Estimated for June 26, 2022!`**')
         //.setImage('')
         //.setFooter(`Update: ${update} ${updateInfo}`)

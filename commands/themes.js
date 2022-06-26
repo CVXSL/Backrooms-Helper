@@ -1,9 +1,12 @@
 const{ Discord, MessageActionRow, MessageSelectMenu } =  require("discord.js")
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
-const update = ("1.0.28")
+
+const update = ("1.1.0")
+
 //const update = process.env['UPDATE'];
-const updateInfo = ("• use /inbox for information")
+//const updateInfo = ("• use /inbox for information")
+const updateInfo = (" ")
 
 module.exports = {
     data: new SlashCommandBuilder()
