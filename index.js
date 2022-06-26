@@ -1,3 +1,4 @@
+
 const update = ("1.1.0")
 const updateInfo = ("• use /inbox for information")
 

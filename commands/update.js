@@ -1,9 +1,11 @@
 const{ Discord, MessageActionRow, MessageSelectMenu } =  require("discord.js")
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
+
 const update = ("1.1.0")
 //const update = process.env['UPDATE'];
-const updateInfo = ("• use /inbox for information")
+//const updateInfo = ("• use /inbox for information")
+const updateInfo = (" ")
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -110,8 +112,7 @@ module.exports = {
 
                                     if(value === "007") {
                                         collected.reply({ embeds:[update007], ephemeral:true })
-                                    }
-                                    
+                                    }                
                                     if(value === "008") {
                                         collected.reply({ embeds:[update008], ephemeral:true })
                                     }
