@@ -2,7 +2,7 @@ const{ Discord, MessageActionRow, MessageSelectMenu } =  require("discord.js")
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
 
-const update = ("1.1.1")
+const update = ("1.1.2")
 //const update = process.env['UPDATE'];
 //const updateInfo = ("• use /inbox for information")
 const updateInfo = (" ")
@@ -34,11 +34,11 @@ module.exports = {
 							description: 'Bug',
 							value: '003',
 						},
-                                                // {
-						// 	label: 'Examine Bug',
-						// 	description: 'Bug',
-						// 	value: '004',
-						// },
+                                                {
+							label: 'Examine Bug',
+							description: 'Bug',
+							value: '004',
+						},
                                                 {
 							label: 'Larger Levels',
 							description: 'Suggestion',
@@ -88,9 +88,9 @@ module.exports = {
                                         collected.reply({ embeds:[faq003], ephemeral:false })
                                     }
 
-                                //     if(value === "004") {
-                                //         collected.reply({ embeds:[faq004], ephemeral:false })
-                                //     }
+                                    if(value === "004") {
+                                        collected.reply({ embeds:[faq004], ephemeral:false })
+                                    }
 
                                     if(value === "005") {
                                         collected.reply({ embeds:[faq005], ephemeral:false })
@@ -143,11 +143,11 @@ const faq003 = new MessageEmbed()
         .setColor("a69518")
         .setFooter(`Update: ${update} ${updateInfo} • FAQ ID: 003`)
 
-// const faq004 = new MessageEmbed()
-//         .setTitle("Examine Bug")
-//         .setDescription("**Type**: `Bug`\n**Status**: `Acknowledged`\n\n**Description**```\nMore info soon!\n```\n [ []() ]")
-//         .setColor("a69518")
-//         .setFooter(`Update: ${update} ${updateInfo} • FAQ ID: 004`)
+const faq004 = new MessageEmbed()
+        .setTitle("Examine Bug")
+        .setDescription("**Type**: `Bug`\n**Status**: `Acknowledged`\n\n**Description**```\nWhen you examine an item, the floor textures disappear behind the item. This bug has been acknowledged and we are actively trying to fix it.\n```")
+        .setColor("a69518")
+        .setFooter(`Update: ${update} ${updateInfo} • FAQ ID: 004`)
 
 const faq005 = new MessageEmbed()
         .setTitle("Larger Levels")
@@ -175,6 +175,6 @@ const faq008 = new MessageEmbed()
 
 const faq009 = new MessageEmbed()
         .setTitle("Angel Bell")
-        .setDescription("**Type**: `Question`\n**Status**: `Common`\n\n**Description**```\nThe Angel Bell is an item that kills all angel statues on your currentl level. If you find that you are being chased by an Angel Statue, use an Angel Bell to kill them.\n```\n [ [Angel Bell](https://the-backrooms-survival.fandom.com/wiki/Bell) | [Angel Statue](https://the-backrooms-survival.fandom.com/wiki/Angel_Statue) ]")
+        .setDescription("**Type**: `Question`\n**Status**: `Common`\n\n**Description**```\nThe Angel Bell is an item that kills angel statues in close proximity to you. If you find that you are being chased by an Angel Statue, use an Angel Bell to kill them.\n```\n [ [Angel Bell](https://the-backrooms-survival.fandom.com/wiki/Bell) | [Angel Statue](https://the-backrooms-survival.fandom.com/wiki/Angel_Statue) ]")
         .setColor("a69518")
         .setFooter(`Update: ${update} ${updateInfo} • FAQ ID: 009`)
